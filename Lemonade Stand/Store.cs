@@ -22,7 +22,7 @@ namespace Lemonade_Stand
         public void BuySupplies()
         {
             Console.ReadLine();
-            Console.WriteLine(" We need to buy supplies first to make your Lemonade recipe.");
+            Console.WriteLine(" We need to buy supplies first before you start mixing your Lemonade.");
             Console.WriteLine(" Cups, lemons, sugar, and/or ice cubes will need to be bought.");
             Console.WriteLine(" Keep in mind the weather when buying things.");
             Console.ReadLine();
@@ -38,7 +38,7 @@ namespace Lemonade_Stand
         {
             Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine(" Let's buy our main ingrediant, lemons first.");
+            Console.WriteLine(" Let's buy our main ingrediant first, lemons.");
             Console.WriteLine("\n You can get 10 for $.80");
             Console.WriteLine("             30 for $2.30");
             Console.WriteLine("             75 for $4.15");

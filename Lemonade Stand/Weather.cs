@@ -8,8 +8,8 @@ namespace Lemonade_Stand
 {
     class Weather
     {
-        string choice;
-        int temperture;
+        public string choice;
+        public int temperature;
         public void GetForecast()
         {
             Console.WriteLine(" Before we buy supplies, we need to know what the weather is.");
@@ -33,13 +33,13 @@ namespace Lemonade_Stand
                     choice = "Hot";
                     break;              
             }
-            Console.WriteLine(" The weather today is {0} and {1} degrees.", choice, temperture);
+            Console.WriteLine(" The weather today is {0} and {1} degrees.", choice, temperature);
         }
 
         public void GetTemperture()
         {
             Random r = new Random();
-            temperture = r.Next(60, 100);          
+            temperature = r.Next(60, 100);          
         }
     }
 }

@@ -16,39 +16,35 @@ namespace Lemonade_Stand
         public double cupsTotal;
         public double sugarTotal;
         public double iceCubesTotal;
-        Store store = new Store();
 
-        public void CurrentInventory()
+        public void CurrentInventory(Store store)
         {
             Console.WriteLine(" Your current inventory is ...");
-            CalculateLemons();
+            CalculateLemons(store);
             Console.WriteLine(" {0}  lemons", lemonsTotal);
-            CalculateCups();
+            CalculateCups(store);
             Console.WriteLine(" {0}  Cups", cupsTotal);
-            CalculateSugar();
+            CalculateSugar(store);
             Console.WriteLine(" {0}  Sugar Cups", sugarTotal);
-            CalculateIceCubes();
+            CalculateIceCubes(store);
             Console.WriteLine(" {0}  Ice Cubes", iceCubesTotal);
         }
-        public void CalculateLemons()
+        public void CalculateLemons(Store store)
         {
             lemonsTotal = store.lemonsToBuy + currentLemons;
-           // lemonsTotal = double.Parse(Console.ReadLine());
-            //Convert.ToString() = lemonsTotal;
-            lemonsTotal = Convert.ToString();
          }
 
-        public void CalculateCups()
+        public void CalculateCups(Store store)
         {
             cupsTotal = currentCups + store.cupsToBuy;
         }
 
-        public void CalculateSugar()
+        public void CalculateSugar(Store store)
         {
             sugarTotal = currentSugar + store.sugarToBuy;
         }
 
-        public void CalculateIceCubes()
+        public void CalculateIceCubes(Store store)
         {
             iceCubesTotal = currentIceCubes + store.iceToBuy;
         }

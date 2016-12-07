@@ -11,6 +11,7 @@ namespace Lemonade_Stand
         Player player = new Player();
         Weather weather = new Weather();
         Inventory inventory = new Inventory();
+        Recipe recipe = new Recipe();
 
         public void RunGame()
         {
@@ -18,6 +19,7 @@ namespace Lemonade_Stand
             GetRules();
             player.SetPlayerName();
             SetUpGame();
+            EndGame();
         }
 
         public void Greeting()
@@ -50,14 +52,32 @@ namespace Lemonade_Stand
             Console.WriteLine(" Your parents have given you $20 to open your {0}'s Lemonade stand.", player.name);
             weather.GetForecast();
             player.myStore.BuySupplies();
-            inventory.CurrentInventory();
+            inventory.CurrentInventory(player.myStore);
+            recipe.BuildRecipe(inventory);
             //Console.WriteLine(" Let's get started!");
             //player.name();
         }
 
         public void GameDay()
         {
+            //DayOfWeek 
+            //price
+            //customer
             //loop through 7 days
+        }
+
+        public void EndGame()
+        {
+            Console.WriteLine(" Would you like to play again? yes or no");
+            string input = Console.ReadLine().ToLower();
+            if (input == "yes")
+            {
+                RunGame();
+            }
+            else if ( input == "no")
+            {
+                Console.WriteLine(" Thanks for playing. Goodbye.");
+            }
         }
     }
     }
