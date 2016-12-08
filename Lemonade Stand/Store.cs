@@ -19,22 +19,23 @@ namespace Lemonade_Stand
         public double sugarToBuy;
         public double iceToBuy;
 
-        public void BuySupplies()
+        public void BuySupplies(Player player)
         {
             Console.ReadLine();
+            Console.WriteLine(" Your parents have given you $20 to open your {0}'s Lemonade stand.", player.name);
             Console.WriteLine(" We need to buy supplies first before you start mixing your Lemonade.");
             Console.WriteLine(" Cups, lemons, sugar, and/or ice cubes will need to be bought.");
             Console.WriteLine(" Keep in mind the weather when buying things.");
             Console.ReadLine();
-            GetLemons();
-            GetCups();
-            GetSugar();
-            GetIceCubes();
+            BuyLemons();
+            BuyCups();
+            BuySugar();
+            BuyIceCubes();
             Console.WriteLine(" You bought {0} lemons, {1} cups, {2} cups of sugar, {3} ice cubes.", lemons, cups, sugar, iceCubes);
             Console.WriteLine("Your remaining cashbox is ${0}", money.moneyBox);
         }
 
-        public void GetLemons()
+        public void BuyLemons()
         {
             Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -64,12 +65,12 @@ namespace Lemonade_Stand
             else
             {
                 Console.WriteLine("Invalid entry. Enter 10, 30, or 75.");
-                GetLemons();
+                BuyLemons();
             }
             Console.ResetColor();
         }
        
-        public void GetCups() 
+        public void BuyCups() 
         {
             Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.Magenta;
@@ -99,12 +100,12 @@ namespace Lemonade_Stand
             else
             {
                 Console.WriteLine("Invalid entry. Enter 25, 50, or 100.");
-                GetCups();
+                BuyCups();
             }
             Console.ResetColor();
         }
         
-        public void GetSugar()
+        public void BuySugar()
         {
             Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -134,11 +135,11 @@ namespace Lemonade_Stand
             else
             {
                 Console.WriteLine("Invalid entry. Enter 8, 20, or 48.");
-                GetSugar();
+                BuySugar();
             }
             Console.ResetColor();
         }
-        public void GetIceCubes()
+        public void BuyIceCubes()
         {
             Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.DarkBlue;
@@ -168,7 +169,7 @@ namespace Lemonade_Stand
             else
             {
                 Console.WriteLine("Invalid entry. Enter 100, 250, or 400.");
-                GetIceCubes();
+                BuyIceCubes();
             }
             Console.ResetColor();
         }

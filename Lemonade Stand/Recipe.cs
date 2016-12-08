@@ -11,17 +11,15 @@ namespace Lemonade_Stand
         double lemon;
         double sugar;
         double ice;
-        double price;
-        public void BuildRecipe(Inventory inventory)
+        public void BuildRecipe(Inventory inventory, Store store)
         {
             Console.WriteLine(" Now that you have your inventory. Now is the time to make your recipe.");
             Console.WriteLine(" Each pitcher holds 4 cups of lemonade.");
-            GetLemons(inventory);
+            GetLemons(inventory, store);
             GetSugar(inventory);
             GetIceCubes(inventory);
-            SetPrice();
         }
-        public void GetLemons(Inventory inventory)
+        public void GetLemons(Inventory inventory, Store store)
         {
             Console.WriteLine(" \n You currently have {0}  lemons in your inventory.", inventory.lemonsTotal);
             Console.WriteLine(" How many lemons would you like to add to your pitcher?");
@@ -33,6 +31,7 @@ namespace Lemonade_Stand
             else
             {
                 Console.WriteLine(" Don't have enough lemons in your inventory.");
+                //BuyLemons(Store store);
             }          
         }
         public void GetSugar(Inventory inventory)
@@ -59,12 +58,7 @@ namespace Lemonade_Stand
                 inventory.iceCubesTotal -= ice;
             }
         }
-        public void SetPrice()
-        {
-            Console.WriteLine(" How much would you like to charge for each cup?");
-            Console.WriteLine(" Please enter price like the example. 1.05 or .25");
-            price = double.Parse(Console.ReadLine());
-        }
+        
     }
 }
     

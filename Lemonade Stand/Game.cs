@@ -12,16 +12,17 @@ namespace Lemonade_Stand
         Weather weather = new Weather();
         Inventory inventory = new Inventory();
         Recipe recipe = new Recipe();
+        Day day = new Day();
+        int i = 0;
 
         public void RunGame()
         {
             Greeting();
             GetRules();
             player.SetPlayerName();
-            SetUpGame();
-            EndGame();
+            GameDay();
+           // EndGame();
         }
-
         public void Greeting()
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -46,38 +47,67 @@ namespace Lemonade_Stand
             Console.WriteLine(" Happy Selling!");
             Console.ResetColor();
         }
-
-        public void SetUpGame()
-        {
-            Console.WriteLine(" Your parents have given you $20 to open your {0}'s Lemonade stand.", player.name);
-            weather.GetForecast();
-            player.myStore.BuySupplies();
-            inventory.CurrentInventory(player.myStore);
-            recipe.BuildRecipe(inventory);
-            //Console.WriteLine(" Let's get started!");
-            //player.name();
-        }
-
+       
         public void GameDay()
         {
-            //DayOfWeek 
-            //price
-            //customer
-            //loop through 7 days
+            weather.GetForecast();
+            SetUpGame();
+            day.SetPrice();
+            day.SetDay();
+            day.GetDailyReport();
+            RunDay();
         }
-
-        public void EndGame()
+        public void SetUpGame()
         {
-            Console.WriteLine(" Would you like to play again? yes or no");
-            string input = Console.ReadLine().ToLower();
-            if (input == "yes")
-            {
-                RunGame();
-            }
-            else if ( input == "no")
-            {
-                Console.WriteLine(" Thanks for playing. Goodbye.");
-            }
+            player.myStore.BuySupplies(player);
+            inventory.CurrentInventory(player.myStore);
+            recipe.BuildRecipe(inventory, recipe);
         }
-    }
-    }
+        public void RunDay()
+        {
+            Console.WriteLine(" Day {0}", i + 1);
+                if (i == 0)
+                {
+                    Console.WriteLine(" Monday");
+                }
+                else if (i == 1)
+                {
+                    Console.WriteLine(" Tuesday");
+                }
+                else if (i == 2)
+                {
+                    Console.WriteLine(" Wednesday");
+                }
+                else if (i == 3)
+                {
+                    Console.WriteLine(" Thursday");
+                }
+                else if (i == 4)
+                {
+                    Console.WriteLine(" Friday");
+                }
+                else if (i == 5)
+                {
+                    Console.WriteLine(" Saturday");
+                }
+                else if (i == 6)
+                {
+                    Console.WriteLine(" Sunday");
+                }
+            }            
+        }
+        //public void EndGame()
+        //{
+        //    Console.WriteLine(" Would you like to play again? yes or no");
+        //    string input = Console.ReadLine().ToLower();
+        //    if (input == "yes")
+        //    {
+        //        //RunGame();
+        //    }
+        //    else if ( input == "no")
+        //    {
+        //        Console.WriteLine(" Thanks for playing. Goodbye.");
+        //    }
+        }
+   // }
+
