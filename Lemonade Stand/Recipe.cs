@@ -11,15 +11,28 @@ namespace Lemonade_Stand
         double lemon;
         double sugar;
         double ice;
-        public void BuildRecipe(Inventory inventory, Store store)
+        public double cupsAmount;
+        public double pitcherQuantity;
+        public void BuildRecipe(Inventory inventory)
         {
             Console.WriteLine(" Now that you have your inventory. Now is the time to make your recipe.");
-            Console.WriteLine(" Each pitcher holds 4 cups of lemonade.");
-            GetLemons(inventory, store);
+            Console.WriteLine(" Each pitcher holds 5 cups of lemonade.");
+            GetLemons(inventory);
             GetSugar(inventory);
             GetIceCubes(inventory);
+            GetPitcherAmount(inventory);
+            GetCupsAmount();
+            Console.WriteLine(" You have {0} pitchers with {1} cups to be sold today.", pitcherQuantity, cupsAmount);
         }
-        public void GetLemons(Inventory inventory, Store store)
+        public void GetCupsAmount()
+        {
+            cupsAmount = pitcherQuantity * 5;
+        }
+        public void GetPitcherAmount(Inventory inventory)
+        {
+            pitcherQuantity = inventory.lemonsTotal / lemon; 
+        }
+        public void GetLemons(Inventory inventory)
         {
             Console.WriteLine(" \n You currently have {0}  lemons in your inventory.", inventory.lemonsTotal);
             Console.WriteLine(" How many lemons would you like to add to your pitcher?");
@@ -31,7 +44,7 @@ namespace Lemonade_Stand
             else
             {
                 Console.WriteLine(" Don't have enough lemons in your inventory.");
-                //BuyLemons(Store store);
+                GetLemons(inventory);
             }          
         }
         public void GetSugar(Inventory inventory)
@@ -46,6 +59,7 @@ namespace Lemonade_Stand
             else
             {
                 Console.WriteLine(" Don't have enough cups of sugar in your inventory.");
+                GetSugar(inventory);
             }
         }
         public void GetIceCubes(Inventory inventory)
@@ -56,6 +70,11 @@ namespace Lemonade_Stand
             if (ice < inventory.iceCubesTotal)
             {
                 inventory.iceCubesTotal -= ice;
+            }
+            else
+            {
+                Console.WriteLine(" Don't have enough ice cubes in your inventory.");
+                GetIceCubes(inventory);
             }
         }
         

@@ -3,4 +3,3 @@ C:\Users\TECRA\Documents\Visual Studio 2015\Projects\Lemonade Stand\Lemonade Sta
 C:\Users\TECRA\Documents\Visual Studio 2015\Projects\Lemonade Stand\Lemonade Stand\bin\Debug\Lemonade Stand.pdb
 C:\Users\TECRA\Documents\Visual Studio 2015\Projects\Lemonade Stand\Lemonade Stand\obj\Debug\Lemonade Stand.exe
 C:\Users\TECRA\Documents\Visual Studio 2015\Projects\Lemonade Stand\Lemonade Stand\obj\Debug\Lemonade Stand.pdb
-C:\Users\TECRA\documents\visual studio 2015\Projects\Lemonade Stand\Lemonade Stand\obj\Debug\Lemonade Stand.csprojResolveAssemblyReference.cache

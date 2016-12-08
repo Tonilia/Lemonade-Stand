@@ -1,0 +1,9 @@
+toni's solid principles used.
+
+1. I used D on my classes. I dont believe my game class but 
+   you need to use many instantences to connent.
+
+2. I used S on all classes. I used many methods that did 1
+   function well. 
+    example)my inventory class: I used a method to calculate each
+      product and then added them together.

@@ -21,7 +21,7 @@ namespace Lemonade_Stand
             GetRules();
             player.SetPlayerName();
             GameDay();
-           // EndGame();
+            EndGame();
         }
         public void Greeting()
         {
@@ -47,67 +47,68 @@ namespace Lemonade_Stand
             Console.WriteLine(" Happy Selling!");
             Console.ResetColor();
         }
-       
+
         public void GameDay()
         {
             weather.GetForecast();
             SetUpGame();
             day.SetPrice();
             day.SetDay();
-            day.GetDailyReport();
             RunDay();
+            // day.GetDailyReport();
         }
         public void SetUpGame()
         {
             player.myStore.BuySupplies(player);
             inventory.CurrentInventory(player.myStore);
-            recipe.BuildRecipe(inventory, recipe);
+            recipe.BuildRecipe(inventory);
         }
         public void RunDay()
         {
             Console.WriteLine(" Day {0}", i + 1);
-                if (i == 0)
-                {
-                    Console.WriteLine(" Monday");
-                }
-                else if (i == 1)
-                {
-                    Console.WriteLine(" Tuesday");
-                }
-                else if (i == 2)
-                {
-                    Console.WriteLine(" Wednesday");
-                }
-                else if (i == 3)
-                {
-                    Console.WriteLine(" Thursday");
-                }
-                else if (i == 4)
-                {
-                    Console.WriteLine(" Friday");
-                }
-                else if (i == 5)
-                {
-                    Console.WriteLine(" Saturday");
-                }
-                else if (i == 6)
-                {
-                    Console.WriteLine(" Sunday");
-                }
-            }            
+            if (i == 0)
+            {
+                Console.WriteLine(" Monday");
+            }
+            else if (i == 1)
+            {
+                Console.WriteLine(" Tuesday");
+            }
+            else if (i == 2)
+            {
+                Console.WriteLine(" Wednesday");
+            }
+            else if (i == 3)
+            {
+                Console.WriteLine(" Thursday");
+            }
+            else if (i == 4)
+            {
+                Console.WriteLine(" Friday");
+            }
+            else if (i == 5)
+            {
+                Console.WriteLine(" Saturday");
+            }
+            else if (i == 6)
+            {
+                Console.WriteLine(" Sunday");
+            }
         }
-        //public void EndGame()
-        //{
-        //    Console.WriteLine(" Would you like to play again? yes or no");
-        //    string input = Console.ReadLine().ToLower();
-        //    if (input == "yes")
-        //    {
-        //        //RunGame();
-        //    }
-        //    else if ( input == "no")
-        //    {
-        //        Console.WriteLine(" Thanks for playing. Goodbye.");
-        //    }
+
+        public void EndGame()
+        {
+            Console.WriteLine(" Would you like to play again? yes or no");
+            string input = Console.ReadLine().ToLower();
+            if (input == "yes")
+            {
+                GameDay();
+            }
+            else if (input == "no")
+            {
+                Console.WriteLine(" Thanks for playing. Goodbye.");
+            }
         }
-   // }
+    }
+}
 

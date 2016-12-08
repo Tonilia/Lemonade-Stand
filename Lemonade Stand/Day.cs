@@ -15,7 +15,7 @@ namespace Lemonade_Stand
 
         public void SetDay()
         {
-            for (i = 0; i >= 100; i++)
+            for (i = 0; i >= 50; i++)
                 {
                     customer.BuildPerson();
                     customer.BuyCupCustomer();
@@ -28,9 +28,9 @@ namespace Lemonade_Stand
             Console.WriteLine(" Please enter price like the example. 1.05 or .25");
             price = double.Parse(Console.ReadLine());
         }
-        public void GetDailyReport()
-        {
+        //public void GetDailyReport()
+        //{
 
-        }
+        //}
     }
 }

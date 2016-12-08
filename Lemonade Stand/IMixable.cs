@@ -8,7 +8,7 @@ namespace Lemonade_Stand
 {
     interface IMixable
     {
-        void BuildRecipe(Inventory inventory, Store store);
+        void BuildRecipe(Inventory inventory);
         
     }
 }

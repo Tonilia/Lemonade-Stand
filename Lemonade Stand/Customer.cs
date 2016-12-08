@@ -11,26 +11,18 @@ namespace Lemonade_Stand
         public int numbers;
         int buyCup;
         double customerTotal;
-        int choice;
         Weather weather = new Weather();
 
         public void BuildPerson()
         {
             Random r = new Random();
-            numbers = r.Next(0, 100);
+            numbers = r.Next(0, 50);
         }
-        //        lemonsTotal = store.lemonsToBuy + currentLemons;     lemon = double.Parse
-        //lemonsToBuy = Convert.ToDouble(Console.ReadLine( ));
-
-
-
+  
         public void BuildCustomers(Weather weather)
         {
-            ////string choice = "choice";
-            //int choice = int.TryParse(weather);
-            ////choice = Convert.ToInt32(Console.ReadLine());
-            //customerTotal = weather.choice + numbers + weather.temperature + buyCup;
-            //Console.WriteLine(" You had {0} cups bought today.", customerTotal);
+            customerTotal = numbers + buyCup;
+            Console.WriteLine(" You had {0} cups bought today.", customerTotal);
         }
         public void BuyCupCustomer()   
         {
